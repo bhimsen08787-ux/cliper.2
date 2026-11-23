@@ -18,3 +18,10 @@ Option B: install Node, then in this folder run:  npx vercel --prod
 - Crop is a fixed left/center/right position (slider), not face tracking.
 - Groq free tier has rate limits; very long videos may need waiting.
 - Use only videos you own or have permission to use.
+
+## Troubleshooting
+- Button says "Loading app..." or "App failed to load": a file did not deploy. Open YOUR-SITE/vendor/ffmpeg/index.js in the browser;
+  it must show code (not 404). Also check YOUR-SITE/vendor/core/ffmpeg-core.wasm downloads. Make sure the repo root is this folder
+  (index.html at the top level), then redeploy and hard-refresh (Ctrl+Shift+R).
+- Red message under the button: it tells you what is missing (video file or Groq key).
+- "ERROR: ..." in the log box: copy that line and send it to get help.
